@@ -13,5 +13,11 @@ interface WeatherApi {
     ) : Response<WeatherModel>
 
 
+    // Add this method to fetch city suggestions
+    @GET("v1/search.json")
+    suspend fun getCitySuggestions(@Query("key") apiKey: String, @Query("q") query: String): Response<List<CitySuggestionModel>>
+
 
 }
+
+
